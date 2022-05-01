@@ -6,8 +6,18 @@
 * *до месяца, до года, больше года: по аналогии.
 '''
 
+sec = int(input('Ввведите число: '))
 
+sec = sec % (24 * 3600)
+hour = sec // 3600
+sec %= 36001
+minu = sec // 60
+sec %= 60
+print("Часов:", hour)
+print("Минут:", minu)
+print("Секунд:", sec)
 
+print(f"{hour}:{minu}:{sec}\n")
 
 
 '''
@@ -16,6 +26,8 @@
 К каждому элементу списка добавить 17 и заново вычислить сумму тех чисел из этого списка, сумма цифр которых
  делится нацело на 7
 '''
+
+print('Задача №2')
 
 def in_sum(n, sum_dig):
     if n > 0:
@@ -38,7 +50,7 @@ for i in range(100):
         sum2 += in_sum(list_of_dig[i], 0)
 
 print(sum1)
-print(sum2)
+print(sum2,'\n')
 #print(list_of_dig)
 
 '''
@@ -46,3 +58,16 @@ print(sum2)
 задаем число 5 — получаем «5 процентов», задаем число 2 — получаем «2 процента». 
 Вывести все склонения для проверки.
 '''
+print('Задача №3')
+
+list_of_str = ['процент', 'процента', 'процентов']
+list_of_dig = []
+
+for i in range(1, 21):
+    list_of_dig.append(i)
+    if i == 1:
+        print(list_of_dig[i-1], list_of_str[0])
+    elif (i > 0) and (i < 5):
+        print(list_of_dig[i-1], list_of_str[1])
+    else:
+        print(list_of_dig[i-1], list_of_str[2])
